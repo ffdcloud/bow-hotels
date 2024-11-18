@@ -105,5 +105,8 @@ func submitHandler(w http.ResponseWriter, r *http.Request) {
 	}
 
 	// Display the registration details as response (for testing purposes)
-	fmt.Fprintf(w, "Inquiry sent!\n\nDetails:\nFirst Name: %s\nEmail: %s\nMessage: %s", data.Sender, data.Email, data.Message)
+	// fmt.Fprintf(w, "Inquiry sent!\n\nDetails:\nFirst Name: %s\nEmail: %s\nMessage: %s", data.Sender, data.Email, data.Message)
+
+	// Redirect to a thank you page (thankyou.html)
+	http.Redirect(w, r, "/thankyou.html", http.StatusSeeOther)
 }
