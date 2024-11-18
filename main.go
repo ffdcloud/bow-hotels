@@ -59,7 +59,7 @@ type InquiryData struct {
 // Handler to serve the form
 func formHandler(w http.ResponseWriter, r *http.Request) {
 	// Parse the form template
-	tmpl, err := template.ParseFiles("form.html")
+	tmpl, err := template.ParseFiles("index.html")
 	if err != nil {
 		http.Error(w, "Error loading form", http.StatusInternalServerError)
 		return
