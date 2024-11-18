@@ -15,6 +15,10 @@
       crossorigin="anonymous" />
    <link rel="stylesheet" href="css/style.css">
    <link rel="stylesheet" href="css/utilities.css">
+
+   <script src="js/lightbox.min.js"></script>
+   <script src="js/script.js" async></script>
+   
    <title>Oregon Grand Hotel</title>
 </head>
 
@@ -200,24 +204,3 @@
 </footer>
 
 </html>
-
-<script>
-   const navbar = document.getElementById('navbar');
-   let scrolled = false;
-
-   window.onscroll = function () {
-      if (window.pageYOffset > 200) {
-         navbar.classList.remove('top')
-         if (!scrolled) {
-            navbar.style.transform = "translateY(-70px)";
-         }
-         setTimeout(function () {
-            navbar.style.transform = "translateY(0)";
-            scrolled = true;
-         }, 250);
-      } else {
-         navbar.classList.add('top');
-         scrolled = false;
-      }
-   }
-</script>

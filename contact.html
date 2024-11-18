@@ -16,6 +16,8 @@
    <link rel="stylesheet" href="css/style.css">
    <link rel="stylesheet" href="css/utilities.css">
 
+   <script src="js/script.js" async></script>
+
    <title>Bow Hotels | Contact Us</title>
 </head>
 
@@ -32,10 +34,6 @@
                <li><a href="index.html#home">Home</a></li>
             </ul>
          </nav>
-      </div>
-
-      <div class="content">
-         <h1>Contact Us</h1>
       </div>
    </header>
 
@@ -64,11 +62,8 @@
 
                   <div class="form-group">
                      <label for="text">Say something nice to us</label>
-                     <input type="text" id="text" name="text" placeholder="Send us a message" required>
-                  </div>
-                  
-                  <div class="form-group">
-                     <div data-netlify-recaptcha="true"></div>
+                     <textarea id="text" name="text" rows="8" cols="50" placeholder="Type your message here"></textarea>
+                     <!-- <input type="text" id="text" name="text" placeholder="Send us a message" required> -->
                   </div>
 
                   <input type="submit" class="btn btn-primary" value="Submit">
@@ -81,7 +76,7 @@
    <div class="contact-info">
       <p>Support 24/7</p>
       <i class="fas fa-phone-alt"></i>
-      <p> +234 90000000</p>
+      <p> +1 825 521 4213</p>
    </div>
 </body>
 
@@ -98,24 +93,3 @@
 </footer>
 
 </html>
-
-<script>
-   const navbar = document.getElementById('navbar');
-   let scrolled = false;
-
-   window.onscroll = function () {
-      if (window.pageYOffset > 240) {
-         navbar.classList.remove('top')
-         if (!scrolled) {
-            navbar.style.transform = "translateY(0)";
-         }
-         setTimeout(function () {
-            navbar.style.transform = "translateY(0)";
-            scrolled = true;
-         }, 300);
-      } else {
-         navbar.classList.add('top');
-         scrolled = false;
-      }
-   }
-</script>

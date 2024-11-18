@@ -2,15 +2,15 @@ const navbar = document.getElementById('navbar');
    let scrolled = false;
 
    window.onscroll = function () {
-      if (window.pageYOffset > 500) {
+      if (window.scrollY > 200) {
          navbar.classList.remove('top')
          if (!scrolled) {
-            navbar.style.transform = "translateY(-70px)";
+            navbar.style.transform = "translateY(0px)";
          }
          setTimeout(function () {
             navbar.style.transform = "translateY(0)";
             scrolled = true;
-         }, 250);
+         }, 300);
       } else {
          navbar.classList.add('top');
          scrolled = false;
