@@ -38,7 +38,7 @@ func main() {
 	fmt.Println("Connected to the database successfully!")
 
 	// Serve static form
-	// http.HandleFunc("/", formHandler)
+	http.HandleFunc("/", formHandler)
 	// Handle form submission
 	http.HandleFunc("/submit", submitHandler)
 
