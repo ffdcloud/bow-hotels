@@ -3,7 +3,6 @@ package main
 import (
 	"database/sql"
 	"fmt"
-	"html/template"
 	"log"
 	"net/http"
 
@@ -37,8 +36,6 @@ func main() {
 	}
 	fmt.Println("Connected to the database successfully!")
 
-	// Serve static form
-	// http.HandleFunc("/", formHandler)
 	// Handle form submission
 	http.HandleFunc("/submit", submitHandler)
 
@@ -57,19 +54,6 @@ type InquiryData struct {
 	Sender  string
 	Email   string
 	Message string
-}
-
-// Handler to serve the form
-func formHandler(w http.ResponseWriter, r *http.Request) {
-	// Parse the form template
-	tmpl, err := template.ParseFiles("index.html")
-	if err != nil {
-		http.Error(w, "Error loading form", http.StatusInternalServerError)
-		return
-	}
-
-	// Serve the form
-	tmpl.Execute(w, nil)
 }
 
 // Handler to process form submission
@@ -103,9 +87,6 @@ func submitHandler(w http.ResponseWriter, r *http.Request) {
 		http.Error(w, "Failed to save data", http.StatusInternalServerError)
 		return
 	}
-
-	// Display the registration details as response (for testing purposes)
-	// fmt.Fprintf(w, "Inquiry sent!\n\nDetails:\nFirst Name: %s\nEmail: %s\nMessage: %s", data.Sender, data.Email, data.Message)
 
 	// Redirect to a thank you page (thankyou.html)
 	http.Redirect(w, r, "/thankyou.html", http.StatusSeeOther)
